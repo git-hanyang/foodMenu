@@ -4,10 +4,11 @@ const app = express ();
 // const port = 3000;
 const mongoose = require('mongoose');
 const methodOverride=require('method-override');
+require("dotenv").config();
 
 const PORT = process.env.PORT || 3000; //process.env for heroku to work // 
 
-mongoURI = process.env.MONGODB_URI || "mongodb+srv://hy:heroku123@cluster0.cmdii1t.mongodb.net/project2";//will replace in heroku site under Config Vars
+mongoURI = process.env.MONGODB_URI ;//will replace in heroku site under Config Vars
 // mongodb+srv://hy:<password>@cluster0.cmdii1t.mongodb.net/?retryWrites=true&w=majority
 
 /////ejs
