@@ -8,8 +8,11 @@ require("dotenv").config();
 
 const PORT = process.env.PORT || 3000; //process.env for heroku to work // 
 
-mongoURI = process.env.MONGODB_URI ;//will replace in heroku site under Config Vars
-// mongodb+srv://hy:<password>@cluster0.cmdii1t.mongodb.net/?retryWrites=true&w=majority
+id=process.env.id;
+password=process.env.password;
+// process.env.MONGODB_URI ||
+mongoURI =  `mongodb+srv://${id}:${password}@cluster0.cmdii1t.mongodb.net/project2`;//will replace in heroku site under Config Vars
+
 
 /////ejs
 app.set('view engine','ejs');
