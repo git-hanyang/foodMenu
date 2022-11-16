@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include ('../partials/head.ejs') -%>
+    <title>Front page</title>
+</head>
+<body>
+    
+    <nav class="nav">
+        <% if (userDetails.username=='admin'){%>
+        <a href="/food/add/new" class="nav-link">Add items</a>
+        <a href="/food/delete" class="nav-link">Delete items</a>
+    <%}%>
+    </nav>
+    
+<div class="container">
+    <div class="box1">
+        <h1>Welcome to the Dessert Heaven</h1>
+        <h2>Hi,
+            <form action="/food/delete/user?_method=DELETE" method="POST">
+            <% if (userDetails) {%> <%= userDetails.username%><%}%>
+            <span class="button"> <input type="submit" value="Log out" class="btn btn-outline-primary btn-sm"></span>
+            </form>
+        </h2>
+        
+            <h6>“Dessert is a necessity of life.”</h6>
+            <h6>“Fun can be the dessert of our lives but never its main course.”</h6>
+            <h4>so take a break,relax and chill with our desserts..</h4>
+        <br>
+    </div>
+
+    <div class="box2">
+        <%item.forEach(function(item){%>
+        
+            <a href="/food/frontpage/item/<%=item.id%>"><img src="/img/<%=item.img%>.jpg" alt="an image of <%=item.name%>"></a>
+
+            <div class="textbox">
+                <p>
+                    <label for="name"><b> <%=item.name%> </label><span class="price">RM<%=item.price%> </span></b>
+                </p>
+                    <span class="description"><%=item.description%></span> 
+                
+            </div>
+
+            <div class="edit">
+                    <% if (userDetails.username=='admin'){%>
+                    <a href="/food/edit/<%=item.id%>"><button class="btn btn-primary btn-sm">edit above item</button></a><br><br>
+                    <%}%>
+        <%})%>
+            </div> 
+        
+    </div>
+</div>
+
+
+</body>
+</html>
+

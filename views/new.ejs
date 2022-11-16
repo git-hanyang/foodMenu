@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Items</title>
+    <%- include ('../partials/head.ejs') -%>
+</head>
+<body>
+    <nav class="nav">
+        <% if (userDetails.username=='admin'){%>
+        
+            <a href="/food/delete" class="nav-link">Delete items</a>
+        
+            <a href="/food/frontpage" class="nav-link">Back to <b>frontpage</b></a>
+            
+    </nav>
+
+    
+            <h1>Add of items here!</h1>
+
+    <div class="user">
+            <form action="/food/frontpage" method="POST">
+
+                <label for="name"> Name:</label> <br>
+                <input type="text" name="name" id="name" placeholder="Required"> <br><br>
+
+                <label for="description"> Description:</label><br>
+                <textarea name="description" rows="5" cols="30" id="description" placeholder="Required"></textarea><br><br>
+
+                <label for="price"> Price (RM):</label><br>
+                <input type="number" name="price" id="price" step="any" placeholder="Required"><br><br>
+
+                <label for="img"> Image:</label><br>
+                <input type="text" name="img" id="img"><br><br>
+
+                <input type="submit" value="Add" class="btn btn-primary"><br><br>
+
+            </form>
+
+            <form action="/food/delete/user?_method=DELETE" method="POST">
+                <span > <input type="submit" value="log out" class="btn btn-outline-primary btn-sm" ></span>
+            </form>
+        <%}%>
+
+    </div>
+</body>
+</html>

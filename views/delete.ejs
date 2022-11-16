@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete items</title>
+    <%- include ('../partials/head.ejs') -%>
+    <style>
+    img{
+        max-width: 10% ;
+        max-height: 10%;
+        border: 2px solid burlywood;
+        border-radius: 10px;
+    }
+
+    form{
+        display: inline;
+    }
+    .button{
+        font-size: 0.5em;
+    }
+    h1{
+        text-align: center;
+        font-size: 3em;
+        margin: 20px 0 20px 0;
+    }
+</style>
+</head>
+<body>
+    <nav class="nav">
+        <% if (userDetails.username=='admin'){%>
+        
+            <a href="/food/add/new" class="nav-link">Add items</a>
+        
+            <a href="/food/frontpage" class="nav-link">Back to <b>frontpage</b></a>
+
+    </nav>
+        
+            <h1>Delete items here!</h1>
+            
+            
+                <%element.forEach(function(element){%>
+                <img src="/img/<%=element.img%>.jpg" alt="an image of <%=element.name%>">
+            <div class="delete">
+                <form action="/food/delete/items/<%=element._id%>?_method=DELETE" method="POST"> <!--when press delete, the page will go to /delete/items/id where the delete executes in js-->
+                <b>Name:</b> <%=element.name%> <br>
+                <input type="submit" value="delete above item" class="btn btn-danger"><br><br><br>
+                </form>
+                <%})%> 
+            
+                <form action="/food/delete/user?_method=DELETE" method="POST">
+                    <span > <input type="submit" value="log out" class="btn btn-outline-primary btn-sm" ></span>
+                    </form>
+
+        <%}%>
+            </div>
+
+</body>
+</html>

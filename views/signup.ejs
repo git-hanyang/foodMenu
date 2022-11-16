@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up here</title>
+    <%- include ('../partials/head.ejs') -%>
+</head>
+<body>
+<div class="marginbottom">
+    <h1>Create New User </h1>
+</div>
+<div class="user">
+    <form action="/user/signup" method="POST"><!--to page where post, create user is executed-->
+    New Username: <input type="text" name="username" id="username" placeholder="Required"><br><br>
+    New Password: <input type="password" name="password" id="password" placeholder="Required"><br><br>
+    <input type="submit" value="Create now"><br><br>
+    </form>
+
+    
+    <a href="/food" >Back to login page</a>
+    
+</div>
+</body>
+</html>

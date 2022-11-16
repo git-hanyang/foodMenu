@@ -1,0 +1,80 @@
+img{
+    max-width: 15% ;
+    border: 2px solid burlywood;
+    border-radius: 20px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 1.3em;
+}
+
+form{
+    display: inline;
+}
+
+h1{
+    text-align: center;
+    font-size: 3em;
+    margin: 20px 0 20px 0;
+}
+
+label{
+    font-size: 1.2em;
+}
+
+body{
+    background-color: rgb(250, 217, 223);
+    margin-bottom: 30px;
+}
+
+.price{
+    float:right;
+    font-size: 1.2em;
+}
+.box1{
+    text-align: center;
+}
+.box2{
+    background-color: ivory;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 30px;
+    background-image: url('/img/background.jpg');
+    border-radius: 20px;
+}
+
+.edit{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: -20px;
+}
+.description{
+    font-size: 1.05em;
+}
+.textbox{
+    max-width: 500px;
+    text-align: center;
+    padding: 20px;
+    background: -webkit-linear-gradient(bottom, rgba(100, 24, 24, 0.4), rgba(128, 127, 72, 0.1));
+    border-radius: 15px 50px ;
+    margin: 0 auto;
+    margin-bottom: 2.2em;
+}
+.button{
+    font-size: 0.5em;
+}
+.user{
+    margin: 0 auto;
+    display: block;
+    max-width: 500px;
+    
+}
+.delete{
+    text-align: center;
+    
+}
+
+.marginbottom{
+    margin-bottom: 10em;
+    margin-top: 5em;
+}

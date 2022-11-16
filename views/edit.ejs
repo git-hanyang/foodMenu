@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit item page</title>
+    <%- include ('../partials/head.ejs') -%>
+    <style>
+    img{
+        max-width: 15% ;
+        border: 2px solid burlywood;
+        border-radius: 10px;
+        display: block;
+    }
+    form{
+        display: inline;
+    }
+
+    .button{
+        font-size: 0.5em;
+        display: block;
+    }
+    h1{
+        text-align: center;
+        font-size: 3em;
+        margin: 20px 0 20px 0;
+    }
+</style>
+</head>
+<body>
+    <nav class="nav">
+        <% if (userDetails.username=='admin'){%>
+        
+            <a href="/food/add/new" class="nav-link">Add items</a>
+            <a href="/food/delete" class="nav-link">Delete items</a>
+       
+            <a href="/food/frontpage" class="nav-link">Back to <b>frontpage</b></a>
+    </nav>
+    
+            <h1>Edit here!</h1>
+
+            <form action="/food/edit/<%=editItem.id%>?_method=PUT" method="POST">
+                <img src="/img/<%=editItem.img%>.jpg" alt="picture of <%=editItem.name%>">
+                
+        <div class="user">
+                <b>Name:</b> <%=editItem.name%> <br>
+                <input type="text" name="name" id="name" value="<%=editItem.name%>" placeholder="<%=editItem.name%>"><br><br>
+
+                <b>Description:</b> <%=editItem.description%> <br>
+                <textarea name="description" id="description" rows="5" cols="30" ><%=editItem.description%></textarea><br><br>
+
+                <b>Price(RM):</b> <%=editItem.price%> <br>
+                <input type="number" name="price" id="price" step="any" value="<%=editItem.price%>" placeholder="<%=editItem.price%>"><br><br>
+                
+                <input type="submit" value="edit" class="btn btn-primary"><br><br>
+            </form>
+
+            <form action="/food/delete/user?_method=DELETE" method="POST">
+                <span > <input type="submit" value="log out" class="btn btn-outline-primary" ></span>
+            </form>
+   
+        <%}%>
+        </div>
+
+    
+
+
+</body>
+</html>
