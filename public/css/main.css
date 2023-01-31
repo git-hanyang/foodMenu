@@ -1,3 +1,5 @@
+
+
 img{
     max-width: 15% ;
     border: 2px solid burlywood;
@@ -15,6 +17,8 @@ h1{
     text-align: center;
     font-size: 3em;
     margin: 20px 0 20px 0;
+    font-family: 'Aboreto', cursive;
+    font-weight: 800;
 }
 
 label{
@@ -39,6 +43,7 @@ body{
     margin: 0 auto;
     padding-top: 30px;
     background-image: url('/img/background.jpg');
+    box-shadow: 0 0 10px rgba(100, 24, 24, 0.4);
     border-radius: 20px;
 }
 
@@ -50,6 +55,7 @@ body{
 }
 .description{
     font-size: 1.05em;
+    font-weight: 450;
 }
 .textbox{
     max-width: 500px;
